@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prediction With Rown</title>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1780957776481582');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1780957776481582&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      min-height:100vh;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:#fff;
+      background:
+        radial-gradient(circle at 15% 10%,rgba(99,102,241,.35),transparent 30%),
+        radial-gradient(circle at 90% 85%,rgba(168,85,247,.28),transparent 32%),
+        linear-gradient(135deg,#050816 0%,#0b1025 48%,#120b25 100%);
+      overflow:hidden;
+    }
+    .orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none}
+    .orb.one{width:240px;height:240px;background:#4f46e5;top:-70px;left:-70px}
+    .orb.two{width:260px;height:260px;background:#9333ea;right:-80px;bottom:-80px}
+    .wrap{min-height:100vh;display:grid;place-items:center;padding:24px}
+    .card{
+      width:min(480px,100%);
+      position:relative;
+      padding:32px 24px 26px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:30px;
+      background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.045));
+      backdrop-filter:blur(24px);
+      -webkit-backdrop-filter:blur(24px);
+      box-shadow:0 28px 90px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.08);
+      text-align:center;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 13px;border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.1);
+      color:#d9dcff;font-size:12px;font-weight:700;letter-spacing:.7px;
+      text-transform:uppercase;
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:#60a5fa;box-shadow:0 0 14px #60a5fa}
+    .logo{
+      width:88px;height:88px;margin:22px auto 18px;border-radius:25px;
+      display:grid;place-items:center;font-size:36px;font-weight:900;
+      background:linear-gradient(145deg,#7c3aed,#2563eb);
+      box-shadow:0 15px 40px rgba(79,70,229,.4);
+      border:1px solid rgba(255,255,255,.2);
+    }
+    h1{font-size:31px;line-height:1.08;letter-spacing:-1px}
+    .sub{margin:11px auto 0;max-width:340px;color:#b8bfd7;font-size:15px;line-height:1.55}
+    .stats{display:flex;justify-content:center;gap:10px;margin:23px 0}
+    .stat{
+      flex:1;max-width:170px;padding:13px 10px;border-radius:17px;
+      background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.08)
+    }
+    .stat b{display:block;font-size:18px}.stat span{font-size:11px;color:#929ab7}
+    .cta{
+      width:100%;border:0;cursor:pointer;text-decoration:none;
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      padding:16px;border-radius:17px;
+      color:white;font-size:16px;font-weight:800;
+      background:linear-gradient(90deg,#2563eb,#7c3aed);
+      box-shadow:0 13px 30px rgba(79,70,229,.35);
+      transition:.2s transform,.2s filter;
+    }
+    .cta:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .telegram{width:22px;height:22px}
+    .timer{margin-top:14px;color:#9ea6c4;font-size:12px}
+    .timer strong{color:#fff}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:19px;text-align:left}
+    .feature{
+      padding:13px;border-radius:15px;background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.07);font-size:12px;color:#c7cce0
+    }
+    .feature b{display:block;color:#fff;margin-bottom:4px;font-size:13px}
+    .note{margin-top:17px;color:#747c9a;font-size:10px;line-height:1.5}
+    @media(max-width:380px){h1{font-size:27px}.card{padding:27px 18px 22px}.features{grid-template-columns:1fr}}
+  </style>
+</head>
+
+<body>
+  <div class="orb one"></div><div class="orb two"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="badge"><span class="dot"></span> Daily Updates</div>
+
+      <div class="logo">R</div>
+
+      <h1>Prediction With Rown</h1>
+      <p class="sub">Daily prediction updates, analysis and channel alerts — delivered directly on Telegram.</p>
+
+      <div class="stats">
+        <div class="stat"><b>10K+</b><span>Channel members</span></div>
+        <div class="stat"><b>24/7</b><span>Updates</span></div>
+      </div>
+
+      <a class="cta" id="joinBtn" href="https://t.me/+SU65IydvW4o2MDJl">
+        <svg class="telegram" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21.6 3.2 18.3 20c-.25 1.18-.91 1.47-1.84.92l-5.07-3.74-2.45 2.36c-.27.27-.5.5-1.03.5l.37-5.16 9.4-8.49c.41-.37-.09-.58-.64-.21L5.42 13.45.42 11.88c-1.09-.34-1.11-1.09.23-1.61L20.2 2.73c.91-.34 1.71.21 1.4.47Z"/>
+        </svg>
+        Join on Telegram
+      </a>
+
+      <div class="timer">Redirecting to Telegram in <strong id="count">3</strong> seconds...</div>
+
+      <div class="features">
+        <div class="feature"><b>⚡ Fast Alerts</b>Quick channel updates.</div>
+        <div class="feature"><b>📊 Analysis</b>Information for members.</div>
+      </div>
+
+      <p class="note">18+ where applicable. Predictions are informational only and are not guaranteed financial results. Make decisions responsibly.</p>
+    </section>
+  </main>
+
+  <script>
+    const TELEGRAM_URL = "https://t.me/+SU65IydvW4o2MDJl";
+    let seconds = 3;
+    const count = document.getElementById("count");
+
+    function trackLead(){
+      if(typeof fbq === "function") fbq("track","Lead");
+    }
+
+    document.getElementById("joinBtn").addEventListener("click", trackLead);
+
+    const interval = setInterval(() => {
+      seconds--;
+      count.textContent = seconds;
+      if(seconds <= 0){
+        clearInterval(interval);
+        trackLead();
+        window.location.replace(TELEGRAM_URL);
+      }
+    },1000);
+  </script>
+</body>
+</html>
